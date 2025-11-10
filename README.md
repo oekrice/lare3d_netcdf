@@ -12,7 +12,10 @@ module load intelmpi
 module load netcdf
 ```
 Test compiling manually with 
-`make`
+```
+make
+```
+but this will happen automatically in 'run.py' anyway if you don't
 
 To set up parameters (resolutions etc.) to be read-in at run time, use
 ```
@@ -22,8 +25,9 @@ where here 0 is the 'run number' (will be used in the output files if you want t
 
 I believe this is set up to create an initial condition for the Pariat jet model, which is done in Python in 'init_bfield.py', and then this raw field is read in to Lare proper.
 
-```
+
 To actually run:
+```
 mpiexec -n 1 ./bin/lare3d 0
 ```
 
