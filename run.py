@@ -77,7 +77,7 @@ variables[15] = nz
 variables[16] = hamilton_flag
 
 
-if False:
+if True:
     class Grid():
         def __init__(self):
             self.x0 = x0; self.x1 = x1
