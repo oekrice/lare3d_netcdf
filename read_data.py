@@ -17,6 +17,8 @@ from scipy.io import netcdf_file
 
 data_directory = './Data/'
 
+if not os.path.exists('plots'):
+    os.mkdir('plots')
 
 
 nx = 96#144#int(paras[1])
