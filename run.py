@@ -120,10 +120,12 @@ if not os.path.exists('diagnostics'):
 if not os.path.exists('Data'):
     os.mkdir('Data')
 
+if not os.path.exists('inits'):
+    os.mkdir('inits')
+
 np.savetxt('parameters/variables%03d.txt' % run, variables)   #variables numbered based on run number (up to 1000)
 
 #Create initial condition using new init.py (potential field with arbitrary lower boundary and domain dimensions)
-#compute_initial_condition(Grid(), lbound_fn, run)
 
 if hamilton_flag < 0.5:
     os.system('/usr/lib64/openmpi/bin/mpiexec -np %d ./bin/lare3d %d' % (ncores, run))

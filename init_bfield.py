@@ -83,7 +83,6 @@ class compute_initial_condition():
                 self.test1 = self.test1 + self.lbound_transform[k1,k2]*self.xbasis[k1,:]*self.ybasis[k2,0]
                 lbound_test = (self.phi[1:-1,1:-1,1] - self.phi[1:-1,1:-1,0])/self.dz
                 error = np.sqrt(np.sum((lbound_test - self.lbound)**2)/(self.nx*self.ny))
-                print(error,k1,k2)
 
         print('Fourier transform finished, calculating magnetic field...')
         self.bx = np.zeros((self.nx+1,self.ny+2,self.nz+2))

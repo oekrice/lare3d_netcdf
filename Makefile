@@ -35,7 +35,7 @@ FFLAGS = -O3
       endif
     endif
   endif
-  MODULEFLAG = -I/usr/include -I$(OBJDIR) -J$(OBJDIR)
+  MODULEFLAG = -I/usr/include -I$(OBJDIR)
 
 MPIF90 ?= mpiifort
 NETCDF = -I /usr/local/Cluster-Apps/netcdf-fortran/ompi/gcc/4.4.4/include
