@@ -6,6 +6,7 @@ Very basic instructions for running something (can't really remember what) on Ha
 
 ```
 git clone https://github.com/oekrice/lare3d_netcdf.git
+cd lare3d_netcdf
 module load intel
 module load intelmpi
 module load netcdf
