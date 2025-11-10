@@ -111,7 +111,14 @@ if False:
 
 os.system('make')
 
-os.mkdir('parameters')
+if not os.path.exists('parameters'):
+    os.mkdir('parameters')
+
+if not os.path.exists('diagnostics'):
+    os.mkdir('diagnostics')
+
+if not os.path.exists('Data'):
+    os.mkdir('Data')
 
 np.savetxt('parameters/variables%03d.txt' % run, variables)   #variables numbered based on run number (up to 1000)
 

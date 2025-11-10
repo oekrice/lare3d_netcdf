@@ -37,15 +37,9 @@ FFLAGS = -O3
   endif
   MODULEFLAG = -I/usr/include -I$(OBJDIR) -J$(OBJDIR)
 
-ifeq ($(shell hostname),hamilton8.dur.ac.uk)
-	MPIF90 ?= mpiifort
-	NETCDF = -I /usr/local/Cluster-Apps/netcdf-fortran/ompi/gcc/4.4.4/include
-	NETCDFLIB = -L/usr/local/Cluster-Apps/netcdf-fortran/ompi/gcc/4.4.4/lib  -lnetcdff
-else
-	MPIF90 ?= /usr/lib64/openmpi/bin/mpif90
-	NETCDF = -I /usr/lib64/gfortran/modules
-	NETCDFLIB = -L/usr/lib64/libnetcdff.so.7 -lnetcdff
-endif
+MPIF90 ?= mpiifort
+NETCDF = -I /usr/local/Cluster-Apps/netcdf-fortran/ompi/gcc/4.4.4/include
+NETCDFLIB = -L/usr/local/Cluster-Apps/netcdf-fortran/ompi/gcc/4.4.4/lib  -lnetcdff
 
 FFLAGS += $(MODULEFLAG)
 LDFLAGS = $(FFLAGS)
