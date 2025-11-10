@@ -22,6 +22,19 @@ import matplotlib.pyplot as plt
 
 #os.system('killall mf2d')
 
+
+if not os.path.exists('parameters'):
+    os.mkdir('parameters')
+
+if not os.path.exists('diagnostics'):
+    os.mkdir('diagnostics')
+
+if not os.path.exists('Data'):
+    os.mkdir('Data')
+
+if not os.path.exists('inits'):
+    os.mkdir('inits')
+
 if len(sys.argv) > 1:
     run = int(sys.argv[1])
 else:
@@ -110,18 +123,6 @@ if True:
 
 
 os.system('make')
-
-if not os.path.exists('parameters'):
-    os.mkdir('parameters')
-
-if not os.path.exists('diagnostics'):
-    os.mkdir('diagnostics')
-
-if not os.path.exists('Data'):
-    os.mkdir('Data')
-
-if not os.path.exists('inits'):
-    os.mkdir('inits')
 
 np.savetxt('parameters/variables%03d.txt' % run, variables)   #variables numbered based on run number (up to 1000)
 
